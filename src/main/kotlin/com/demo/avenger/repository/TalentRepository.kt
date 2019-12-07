@@ -9,4 +9,5 @@ import com.demo.avenger.dto.jpa.Talent
 @Repository
 interface TalentRepository : CrudRepository<Talent, UUID> {
     fun findByEmail(email: String) : Talent?
+    fun removeAllByFirstName(firstName: String)
 }

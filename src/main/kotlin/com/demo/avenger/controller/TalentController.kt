@@ -12,14 +12,17 @@ import com.demo.avenger.service.TalentService
 
 @RestController
 @RequestMapping("/talent")
-class TalentController {
-    @Autowired
-    protected val talentService: TalentService? = null
+class TalentController(protected val talentService: TalentService) {
 
     @GetMapping
     fun getAll() : ResponseEntity<Iterable<Talent>> {
-        val talents = talentService?.getAll()!!
+        val talents = talentService.getAll()
         return ResponseEntity(talents, HttpStatus.OK)
+    }
+
+    @DeleteMapping
+    fun deleteAllByFirstName(firstName: String) {
+        talentService.deleteAllByFirstName(firstName)
     }
 
 }
