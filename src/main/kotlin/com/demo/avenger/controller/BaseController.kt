@@ -10,7 +10,7 @@ class BaseController {
     @GetMapping
     fun base(): ResponseEntity<HashMap<String, String>> {
         val response = HashMap<String, String>()
-        response["message"] = "AVENGER MAIN"
+        response["message"] = "AVENGER BASE CONTROLLER"
         response["status"] = "OK"
         return ResponseEntity.ok(response)
     }
