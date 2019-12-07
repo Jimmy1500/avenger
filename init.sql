@@ -1,8 +1,9 @@
--- CREATE USER IF NOT EXISTS jimmy;
--- CREATE DATABASE IF NOT EXISTS mydb;
--- GRANT ALL PRIVILEGES ON DATABASE mydb TO jimmy;
+-- DONE BY DOCKER
+-- CREATE USER IF NOT EXISTS postgres;
+-- CREATE DATABASE IF NOT EXISTS postgres;
+-- GRANT ALL PRIVILEGES ON DATABASE postgres TO postgres;
 
-\connect mydb;
+\connect postgres;
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
