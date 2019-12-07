@@ -1,0 +1,28 @@
+version: '3'
+services:
+
+  backend:
+    container_name: avenger_api
+    env_file: .env
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/code
+      - logvolume01:/var/log
+
+  postgres:
+    container_name: avenger_db
+    env_file: .env
+    build:
+      context: ./
+      dockerfile: Dockerfile_DB
+    ports:
+      - "5432:5432"
+
+volumes:
+  logvolume01: {}

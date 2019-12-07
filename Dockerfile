@@ -1,9 +1,11 @@
-FROM postgres:alpine
+FROM openjdk:12-jdk-alpine
 
-ENV POSTGRES_USER postgres
-ENV POSTGRES_PASSWORD postgres
-ENV POSTGRES_DB postgres
+VOLUME /tmp
+ADD build/libs/voiceoftalent-api-1.0-SNAPSHOT.jar app.jar
 
-EXPOSE 5432
+ENV JAVA_OPTS=""
 
-ADD ./init.sql docker-entrypoint-initdb.d/
+RUN apk update
+RUN apk add ffmpeg
+
+ENTRYPOINT [ "/bin/sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
