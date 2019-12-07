@@ -3,7 +3,11 @@ services:
 
   backend:
     container_name: avenger_api
-    env_file: .env
+    image: avenger_backend
+    environment:
+        - DB_CONNECTION=jdbc:postgresql://postgres:5432/postgres
+        - DB_USERNAME=postgres
+        - DB_PASSWORD=postgres
     build:
       context: ./
       dockerfile: Dockerfile
@@ -17,7 +21,7 @@ services:
 
   postgres:
     container_name: avenger_db
-    env_file: .env
+    image: avenger_database
     build:
       context: ./
       dockerfile: Dockerfile_DB
