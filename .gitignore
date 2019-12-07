@@ -25,6 +25,7 @@ hs_err_pid*
 # ide
 .idea
 .gradle
+build
 
 *.iml
 *.vim
