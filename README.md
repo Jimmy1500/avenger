@@ -1,2 +1,2 @@
 # avenger
-kotlin+springboot+jpa+postgres+docker demo
+SpringBoot (Kotlin) REST API + JPA + PostgresSQL / Docker Demo 
