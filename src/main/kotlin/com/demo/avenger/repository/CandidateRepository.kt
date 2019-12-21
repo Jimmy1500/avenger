@@ -9,6 +9,6 @@ import com.demo.avenger.dto.jpa.Candidate
 @Repository
 interface CandidateRepository : CrudRepository<Candidate, UUID> {
     fun findByEmail(email: String) : Candidate?
-    fun findAllByFirstName(firstName: String)
+    fun findAllByFirstName(firstName: String): Iterable<Candidate?>
     fun removeAllByFirstName(firstName: String)
 }

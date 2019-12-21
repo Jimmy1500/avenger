@@ -13,6 +13,10 @@ class CandidateService(protected val candidateRepository: CandidateRepository) {
         return candidateRepository.findAll()
     }
 
+    fun getAllByFirstName(firstName: String) : Iterable<Candidate?> {
+        return candidateRepository.findAllByFirstName(firstName)
+    }
+
     @Transactional
     fun deleteAllByFirstName(firstName: String) {
         return candidateRepository.removeAllByFirstName(firstName)
