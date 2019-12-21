@@ -9,7 +9,7 @@ import javax.persistence.*
 
 
 @Entity
-data class Talent (
+data class Candidate (
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         // @org.hibernate.annotations.Type(type="org.hibernate.type.PostgresUUIDType")
@@ -18,7 +18,7 @@ data class Talent (
         @Column(name = "first_name")
         var firstName: String = "",
 
-        @Column(name = "middle_name")
+        @Column(name = "middle_initial")
         var middleName: String? = null,
 
         @Column(name = "last_name")
@@ -28,8 +28,8 @@ data class Talent (
         var email: String = "",
 
         @CreatedDate
-        var created: Date = Date(),
+        var created: Date? = null,
 
         @LastModifiedDate
-        var updated: Date? = null
+        var updated: Date = Date()
 ) : Serializable
