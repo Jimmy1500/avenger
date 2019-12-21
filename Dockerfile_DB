@@ -6,4 +6,4 @@ ENV POSTGRES_DB postgres
 
 EXPOSE 5432
 
-ADD ./db/flyway/init.sql docker-entrypoint-initdb.d/
+ADD ./db/flyway/avenger.sql docker-entrypoint-initdb.d/
