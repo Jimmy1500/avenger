@@ -1,11 +1,11 @@
-package com.demo.avenger
+package com.trading.quant
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class AvengerApplication
+class QuantApplication
 
 fun main(args: Array<String>) {
-	runApplication<AvengerApplication>(*args)
+	runApplication<QuantApplication>(*args)
 }
